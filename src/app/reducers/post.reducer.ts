@@ -7,6 +7,7 @@ const defaultState: Post = {
     likes: 0
 };
 
+// The commented out approach causes reducer strict typing issues when registering the reducer in app.module.ts.
 // To access the additonal props on Actions you can use ReturnType<> interface
 // type Action
 //     = ReturnType<typeof PostActions.editText>
@@ -32,8 +33,8 @@ const defaultState: Post = {
 // }
 
 export const postReducer: ActionReducer<Post, Action> = createReducer(defaultState,
-    on(PostActions.editText, (state, { payload }) => ({ ...state, prop: payload })),
+    on(PostActions.editText, (state, { payload }) => ({ ...state, text: payload })),
     on(PostActions.upvote, state => ({ ...state, likes: state.likes + 1 })),
-    on(PostActions.upvote, state => ({ ...state, likes: state.likes - 1 })),
+    on(PostActions.downvote, state => ({ ...state, likes: state.likes - 1 })),
     on(PostActions.reset, () => defaultState)
     );

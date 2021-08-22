@@ -5,7 +5,7 @@ export const UPVOTE: string = '[Post] Upvote';
 export const DOWNVOTE: string = '[Post] Downvote';
 export const RESET: string = '[Post] Reset';
 
-// Export actions as classes that implement Action interface - that causes reducer strict typing issued in ngrx 12
+// Export actions as classes that implement Action interface - that causes reducer strict typing issues in ngrx 12
 // export class EditText implements Action {
 //     readonly type = EDIT_TEXT;
 
@@ -27,12 +27,6 @@ export const RESET: string = '[Post] Reset';
 //     readonly type = RESET;
 //     readonly payload = undefined;
 // }
-
-// export type All
-//     = EditText
-//     | Upvote
-//     | Downvote
-//     | Reset;
 
 // Create a bunch of action creators to get a type-safe Actions with additional props
 export const editText = createAction(

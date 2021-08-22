@@ -33,10 +33,15 @@ export class AppComponent {
   }
 
   onDownvote() {
-    this.store.dispatch(PostActions.upvote());
+    this.store.dispatch(PostActions.downvote());
   }
 
   onReset() {
     this.store.dispatch(PostActions.reset());
+  }
+
+  updateText($event: Event) {
+    const target = $event.target as HTMLInputElement;
+    this.text = target.value;
   }
 }

@@ -8,7 +8,7 @@
     <button (click)="onDownvote()">Downvote</button>
     <button (click)="onReset()">Reset</button>
   
-    <input [(ngModel)]="text">
-    <button (click)="onEditText()" >Change Title</button>
+    <input type="text" (keyup)="updateText($event)"/>
+    <button (click)="onEditText()">Change Title</button>
   
   </div>
