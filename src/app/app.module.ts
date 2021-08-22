@@ -9,7 +9,7 @@ import { postReducer } from './reducers/post.reducer';
 
 const logger: (reducer: ActionReducer<any, Action>) => any = reducer => {
 	return function newReducer(state: AppState, action: Action) {
-		console.groupCollapsed(action.type);
+		console.group(action.type);
 		const nextState = reducer(state, action);
 		console.log(`%c prev state`, `color: #9E9E9E; font-weight: bold`, state);
 		console.log(`%c action`, `color: #03A9F4; font-weight: bold`, action);
